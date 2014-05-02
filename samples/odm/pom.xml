@@ -2,17 +2,21 @@
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>org.springframework.ldap</groupId>
   <artifactId>spring-ldap-odm-sample</artifactId>
   <version>2.0.1.CI-SNAPSHOT</version>
   <packaging>war</packaging>
+  
   <name>spring-ldap-odm-sample</name>
   <description>spring-ldap-odm-sample</description>
   <url>http://www.springframework.org/ldap</url>
+  
   <organization>
     <name>SpringSource</name>
     <url>http://springsource.org/</url>
   </organization>
+  
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -20,6 +24,7 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
+  
   <developers>
     <developer>
       <id>rwinch</id>
@@ -41,6 +46,7 @@
       <organizationUrl>http://www.jayway.com</organizationUrl>
     </developer>
   </developers>
+  
   <contributors>
     <contributor>
       <name>Eric Dalquist</name>
@@ -61,11 +67,13 @@
       <name>Marvin S. Addison</name>
     </contributor>
   </contributors>
+  
   <scm>
     <connection>scm:git:git://github.com/SpringSource/spring-ldap</connection>
     <developerConnection>scm:git:git://github.com/SpringSource/spring-ldap</developerConnection>
     <url>https://github.com/SpringSource/spring-ldap</url>
   </scm>
+  
   <build>
     <plugins>
       <plugin>
@@ -94,42 +102,46 @@
       </plugin>
     </plugins>
   </build>
-  <repositories>
-    <repository>
-      <id>spring-snasphot</id>
-      <url>http://repo.springsource.org/libs-snapshot</url>
-    </repository>
-  </repositories>
+<!--   <repositories> -->
+<!--     <repository> -->
+<!--       <id>spring-snasphot</id> -->
+<!--       <url>http://repo.springsource.org/libs-snapshot</url> -->
+<!--     </repository> -->
+<!--   </repositories> -->
   <dependencies>
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>3.2.8.RELEASE</version>
-      <scope>compile</scope>
+      <version>${version.spring}</version>
     </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>${version.spring}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${version.spring}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.ldap</groupId>
+      <artifactId>spring-ldap-test</artifactId>
+      <version>${version.spring.ldap}</version>
+    </dependency>
+
     <dependency>
       <groupId>ch.qos.logback</groupId>
       <artifactId>logback-classic</artifactId>
       <version>1.0.13</version>
       <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.ldap</groupId>
-      <artifactId>spring-ldap-test</artifactId>
-      <version>2.0.1.CI-SNAPSHOT</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
+    </dependency>    <dependency>
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
       <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-test</artifactId>
-      <version>3.2.8.RELEASE</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
@@ -137,11 +149,10 @@
       <version>4.10</version>
       <scope>test</scope>
     </dependency>
-    <dependency>
-      <groupId>org.springframework</groupId>
-      <artifactId>spring-context</artifactId>
-      <version>3.2.8.RELEASE</version>
-      <scope>compile</scope>
-    </dependency>
+
   </dependencies>
+  <properties>
+  	<version.spring>4.0.4.RELEASE</version.spring>
+  	<version.spring.ldap>2.0.1.RELEASE</version.spring.ldap>
+  </properties>
 </project>

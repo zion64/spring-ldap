@@ -21,7 +21,6 @@
                 </form>
             </div>
         </div>
-        
         <c:forEach var="user" items="${users}" varStatus="stat">
             <div class="row row-${stat.index % 2}">
                 <div class="col-md-11">${user.fullName} - ${user.department}&nbsp;</div>

@@ -116,8 +116,7 @@
     <dependency>
       <groupId>org.springframework.ldap</groupId>
       <artifactId>spring-ldap-test</artifactId>
-      <version>2.0.1.CI-SNAPSHOT</version>
-      <scope>compile</scope>
+      <version>2.0.1.RELEASE</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>

@@ -15,13 +15,11 @@
 
     <ldap:ldap-template id="ldapTemplate" context-source-ref="contextSource"/>
 
-    <bean id="ldapTreeBuilder"
-          class="org.springframework.ldap.samples.utils.LdapTreeBuilder">
+    <bean id="ldapTreeBuilder" class="org.springframework.ldap.samples.utils.LdapTreeBuilder">
         <constructor-arg ref="ldapTemplate" />
     </bean>
 
-    <bean id="personDao"
-          class="org.springframework.ldap.samples.odm.dao.OdmPersonDaoImpl">
+    <bean id="personDao" class="org.springframework.ldap.samples.odm.dao.OdmPersonDaoImpl">
         <property name="ldapTemplate" ref="ldapTemplate" />
     </bean>
 
