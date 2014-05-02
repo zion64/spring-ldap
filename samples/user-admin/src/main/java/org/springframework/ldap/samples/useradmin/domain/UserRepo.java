@@ -26,4 +26,5 @@ import java.util.List;
 public interface UserRepo extends LdapRepository<User> {
     User findByEmployeeNumber(int employeeNumber);
     List<User> findByFullNameContains(String name);
+    List<User> findAllUsers();
 }

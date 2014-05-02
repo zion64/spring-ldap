@@ -22,14 +22,16 @@ import org.springframework.ldap.odm.annotations.Entry;
 import org.springframework.ldap.odm.annotations.Id;
 
 import javax.naming.Name;
+
 import java.util.HashSet;
 import java.util.Set;
 
 /**
  * @author Mattias Hellborg Arthursson
  */
+@SuppressWarnings("serial")
 @Entry(objectClasses = {"groupOfNames", "top"}, base = "ou=Groups")
-public final class Group {
+public final class Group implements java.io.Serializable {
     @Id
     private Name id;
 
