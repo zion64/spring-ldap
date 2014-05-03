@@ -55,7 +55,7 @@
     <!-- Required to make sure BaseLdapName is populated in UserService -->
     <bean class="org.springframework.ldap.core.support.BaseLdapPathBeanPostProcessor" />
 
-    <beans profile="default">
+    <beans profile="embed-apacheds">
         <!--
             This is for test and demo purposes only - EmbeddedLdapServerFactoryBean launches an in-process
             LDAP server.
@@ -75,7 +75,7 @@
         </bean>
     </beans>
 
-    <beans profile="no-apacheds">
+    <beans profile="external-apacheds">
         <!-- Populates the LDAP server with initial data -->
         <bean class="org.springframework.ldap.test.LdifPopulator">
             <property name="contextSource" ref="contextSource" />
