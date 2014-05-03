@@ -7,6 +7,10 @@ package com.zeiv.emp.domain;
  */
 public class EmployeesAllAttrView implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long	serialVersionUID	= 5939119693639622817L;
 	private EmployeesAllAttrViewId	id;
 
 	public EmployeesAllAttrView() {

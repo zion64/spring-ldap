@@ -7,6 +7,10 @@ package com.zeiv.emp.domain;
  */
 public class Departments implements java.io.Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long	serialVersionUID	= -6127690146005150651L;
 	private String	deptNo;
 	private String	deptName;
 
