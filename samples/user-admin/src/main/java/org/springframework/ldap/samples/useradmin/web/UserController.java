@@ -114,7 +114,7 @@ public class UserController {
 	public String createUser(User user) throws UnsupportedEncodingException {
 		User savedUser = userService.createUser(user);
 		logger.info("저장된 사용자: {}", savedUser.getFullName());
-		return URLEncoder.encode("redirect:/users/" + savedUser.getId(), "UTF-8");
+		return "redirect:/users/" + URLEncoder.encode(savedUser.getId().toString(), "UTF-8");
 	}
 
 	@RequestMapping(value = "/users/{userid}", method = POST)
