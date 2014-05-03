@@ -45,7 +45,13 @@ public class DepartmentRepoImpl implements DepartmentRepo {
 
     @Override
     public Map<String, List<String>> getDepartmentMap() {
-        return new HashMap<String, List<String>>(){{
+        return new HashMap<String, List<String>>(){
+        	/**
+			 * 
+			 */
+			private static final long	serialVersionUID	= 1L;
+
+		{
             List<String> allDepartments = getAllDepartments();
             for (String oneDepartment : allDepartments) {
                 put(oneDepartment, getAllUnitsForDepartment(oneDepartment));

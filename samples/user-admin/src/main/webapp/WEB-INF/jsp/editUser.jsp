@@ -17,7 +17,7 @@
 
             if (selectedUnit) {
                 unitSelect.val(selectedUnit);
-            }
+            };
         }
 
         var populateDepartments = function(selectedDepartment, selectedUnit) {
