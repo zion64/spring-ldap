@@ -118,9 +118,9 @@ public class UserController {
 	}
 
 	@RequestMapping(value = "/users/{userid}", method = POST)
-	public String updateUser(@PathVariable String userid, User user) {
+	public String updateUser(@PathVariable String userid, User user) throws UnsupportedEncodingException {
 		User savedUser = userService.updateUser(userid, user);
 
-		return "redirect:/users/" + savedUser.getId();
+		return "redirect:/users/" + URLEncoder.encode(savedUser.getId().toString(), "UTF-8");
 	}
 }

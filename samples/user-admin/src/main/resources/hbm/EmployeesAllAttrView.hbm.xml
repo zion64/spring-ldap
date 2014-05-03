@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014. 5. 3 ?????? 9:29:19 by Hibernate Tools 4.0.0 -->
+<hibernate-mapping>
+    <class name="com.zeiv.emp.domain.EmployeesAllAttrView" table="employees_all_attr_view" schema="public">
+        <composite-id name="id" class="com.zeiv.emp.domain.EmployeesAllAttrViewId">
+            <key-property name="empNo" type="java.lang.Integer">
+                <column name="emp_no" />
+            </key-property>
+            <key-property name="firstName" type="string">
+                <column name="first_name" length="14" />
+            </key-property>
+            <key-property name="lastName" type="string">
+                <column name="last_name" length="16" />
+            </key-property>
+            <key-property name="gender" type="string">
+                <column name="gender" length="20" />
+            </key-property>
+            <key-property name="hireDate" type="date">
+                <column name="hire_date" length="13" />
+            </key-property>
+            <key-property name="birthDate" type="date">
+                <column name="birth_date" length="13" />
+            </key-property>
+            <key-property name="deptNo" type="string">
+                <column name="dept_no" length="4" />
+            </key-property>
+            <key-property name="deptFromDate" type="date">
+                <column name="dept_from_date" length="13" />
+            </key-property>
+            <key-property name="deptToDate" type="date">
+                <column name="dept_to_date" length="13" />
+            </key-property>
+            <key-property name="title" type="string">
+                <column name="title" length="50" />
+            </key-property>
+            <key-property name="titleFromDate" type="date">
+                <column name="title_from_date" length="13" />
+            </key-property>
+            <key-property name="titleToDate" type="date">
+                <column name="title_to_date" length="13" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>
