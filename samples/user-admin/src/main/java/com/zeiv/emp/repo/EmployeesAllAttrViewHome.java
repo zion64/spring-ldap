@@ -1,12 +1,12 @@
 package com.zeiv.emp.repo;
 
-// Generated 2014. 5. 3 오후 9:29:19 by Hibernate Tools 4.0.0
+// Generated 2014. 5. 4 오전 12:22:02 by Hibernate Tools 4.0.0
 
 import java.util.List;
 
-import javax.naming.InitialContext;
-
+import org.hibernate.HibernateException;
 import org.hibernate.LockMode;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
@@ -19,25 +19,16 @@ import com.zeiv.emp.domain.EmployeesAllAttrView;
 
 /**
  * Home object for domain model class EmployeesAllAttrView.
- * @see com.zeiv.emp.domain.EmployeesAllAttrView
+ * @see com.zeiv.emp.util.EmployeesAllAttrView
  * @author Hibernate Tools
  */
-@Repository
+@Repository(value="employeesAllAttrViewHome")
 public class EmployeesAllAttrViewHome {
 
 	private static final Logger		log				= LoggerFactory.getLogger(EmployeesAllAttrViewHome.class);
 
 	@Autowired
-	private SessionFactory	sessionFactory;	//= getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext().lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException("Could not locate SessionFactory in JNDI");
-		}
-	}
+	private SessionFactory	sessionFactory;
 
 	public void persist(EmployeesAllAttrView transientInstance) {
 		log.debug("persisting EmployeesAllAttrView instance");
@@ -97,10 +88,11 @@ public class EmployeesAllAttrViewHome {
 		}
 	}
 
-	public EmployeesAllAttrView findById(int id) {
+	public EmployeesAllAttrView findById(com.zeiv.emp.domain.EmployeesAllAttrViewId id) {
 		log.debug("getting EmployeesAllAttrView instance with id: " + id);
 		try {
-			EmployeesAllAttrView instance = (EmployeesAllAttrView) sessionFactory.getCurrentSession().get("com.zeiv.emp.domain.EmployeesAllAttrView", id);
+			EmployeesAllAttrView instance = (EmployeesAllAttrView) sessionFactory.getCurrentSession()
+					.get("com.zeiv.emp.util.EmployeesAllAttrView", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			}
@@ -117,8 +109,8 @@ public class EmployeesAllAttrViewHome {
 	public List<EmployeesAllAttrView> findByExample(EmployeesAllAttrView instance) {
 		log.debug("finding EmployeesAllAttrView instance by example");
 		try {
-			List<EmployeesAllAttrView> results =GenericUtil.castList(EmployeesAllAttrView.class, sessionFactory.getCurrentSession()
-					.createCriteria("com.zeiv.emp.domain.EmployeesAllAttrView")
+			List<EmployeesAllAttrView> results = GenericUtil.castList(EmployeesAllAttrView.class, sessionFactory.getCurrentSession()
+					.createCriteria("com.zeiv.emp.util.EmployeesAllAttrView")
 					.add(Example.create(instance))
 					.list());
 			log.debug("find by example successful, result size: " + results.size());
@@ -126,6 +118,33 @@ public class EmployeesAllAttrViewHome {
 		} catch (RuntimeException re) {
 			log.error("find by example failed", re);
 			throw re;
+		}
+	}
+	
+	public List<EmployeesAllAttrView> findAll(int start, int limit) {
+		log.debug("finding Employees instance by example");
+		try {
+			List<EmployeesAllAttrView> results = GenericUtil.castList(EmployeesAllAttrView.class,
+					sessionFactory.getCurrentSession().createCriteria("com.zeiv.emp.domain.EmployeesAllAttrView")
+							.setFirstResult(start)
+							.setMaxResults(limit)
+							.list());
+			log.info("find by example successful, result size: " + results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("find by example failed", re);
+			throw re;
+		}
+	}
+
+	public Number getTotalCountOfEmployeesAllAttrView() {
+		Session session = sessionFactory.getCurrentSession();
+		try {
+			return ((Number) session.createSQLQuery("select count(*) from employees_all_attr_view").uniqueResult()).longValue();
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			throw e;
+		} finally {
 		}
 	}
 }

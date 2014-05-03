@@ -11,5 +11,8 @@
   <property name="hibernate.connection.autocommit">true</property>
   <property name="hibernate.connection.release_mode">after_transaction</property>
   <property name="hibernate.session_factory_name">java:jboss/ldap/employee/SessionFactory</property>
+  <property name="hibernate.max_fetch_depth">0</property>
+  <mapping resource="hbm/EmployeesAllAttrView.hbm.xml"/>
+  <mapping resource="hbm/Departments.hbm.xml"/>
  </session-factory>
 </hibernate-configuration>

@@ -4,8 +4,6 @@ package com.zeiv.emp.repo;
 
 import java.util.List;
 
-import javax.naming.InitialContext;
-
 import org.hibernate.LockMode;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
@@ -22,23 +20,14 @@ import com.zeiv.emp.domain.Departments;
  * @see com.zeiv.emp.domain.Departments
  * @author Hibernate Tools
  */
-@Repository
+@Repository(value="departmentsHome")
 public class DepartmentsHome {
 
 	private static final Logger		log				= LoggerFactory.getLogger(DepartmentsHome.class);
 
 	@Autowired
-	private SessionFactory	sessionFactory;//	= getSessionFactory();
-
-	protected SessionFactory getSessionFactory() {
-		try {
-			return (SessionFactory) new InitialContext().lookup("SessionFactory");
-		} catch (Exception e) {
-			log.error("Could not locate SessionFactory in JNDI", e);
-			throw new IllegalStateException("Could not locate SessionFactory in JNDI");
-		}
-	}
-
+	private SessionFactory	sessionFactory;
+	
 	public void persist(Departments transientInstance) {
 		log.debug("persisting Departments instance");
 		try {
