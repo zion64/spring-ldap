@@ -11,7 +11,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.samples.useradmin.util.GenericUtil;
+import org.springframework.stereotype.Repository;
 
 import com.zeiv.emp.domain.Departments;
 
@@ -20,11 +22,13 @@ import com.zeiv.emp.domain.Departments;
  * @see com.zeiv.emp.domain.Departments
  * @author Hibernate Tools
  */
+@Repository
 public class DepartmentsHome {
 
 	private static final Logger		log				= LoggerFactory.getLogger(DepartmentsHome.class);
 
-	private final SessionFactory	sessionFactory	= getSessionFactory();
+	@Autowired
+	private SessionFactory	sessionFactory;//	= getSessionFactory();
 
 	protected SessionFactory getSessionFactory() {
 		try {
