@@ -213,4 +213,7 @@
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
+	<issueManagement>
+		<system>Jira</system>
+	</issueManagement>
 </project>
