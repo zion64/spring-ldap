@@ -1,6 +1,6 @@
 package com.zeiv.emp.domain;
 
-// Generated 2014. 5. 4 오전 12:17:16 by Hibernate Tools 4.0.0
+// Generated 2014. 5. 4 오전 11:41:31 by Hibernate Tools 3.4.0.CR1
 
 import java.util.Date;
 
@@ -12,8 +12,8 @@ public class EmployeesAllAttrViewId implements java.io.Serializable {
 	/**
 	 * 
 	 */
-	private static final long	serialVersionUID	= 7860296035829710758L;
-	private Integer	empNo;
+	private static final long	serialVersionUID	= 3273871573578240762L;
+	private int		empNo;
 	private String	firstName;
 	private String	lastName;
 	private String	gender;
@@ -29,7 +29,22 @@ public class EmployeesAllAttrViewId implements java.io.Serializable {
 	public EmployeesAllAttrViewId() {
 	}
 
-	public EmployeesAllAttrViewId(Integer empNo, String firstName, String lastName, String gender, Date hireDate, Date birthDate,
+	public EmployeesAllAttrViewId(int empNo, String firstName, String lastName, String gender, Date hireDate, Date birthDate,
+			String deptNo, Date deptFromDate, Date deptToDate, String title, Date titleFromDate) {
+		this.empNo = empNo;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.hireDate = hireDate;
+		this.birthDate = birthDate;
+		this.deptNo = deptNo;
+		this.deptFromDate = deptFromDate;
+		this.deptToDate = deptToDate;
+		this.title = title;
+		this.titleFromDate = titleFromDate;
+	}
+
+	public EmployeesAllAttrViewId(int empNo, String firstName, String lastName, String gender, Date hireDate, Date birthDate,
 			String deptNo, Date deptFromDate, Date deptToDate, String title, Date titleFromDate, Date titleToDate) {
 		this.empNo = empNo;
 		this.firstName = firstName;
@@ -45,11 +60,11 @@ public class EmployeesAllAttrViewId implements java.io.Serializable {
 		this.titleToDate = titleToDate;
 	}
 
-	public Integer getEmpNo() {
+	public int getEmpNo() {
 		return this.empNo;
 	}
 
-	public void setEmpNo(Integer empNo) {
+	public void setEmpNo(int empNo) {
 		this.empNo = empNo;
 	}
 
@@ -150,8 +165,7 @@ public class EmployeesAllAttrViewId implements java.io.Serializable {
 			return false;
 		EmployeesAllAttrViewId castOther = (EmployeesAllAttrViewId) other;
 
-		return ((this.getEmpNo() == castOther.getEmpNo()) || (this.getEmpNo() != null && castOther.getEmpNo() != null && this.getEmpNo()
-				.equals(castOther.getEmpNo())))
+		return (this.getEmpNo() == castOther.getEmpNo())
 				&& ((this.getFirstName() == castOther.getFirstName()) || (this.getFirstName() != null && castOther.getFirstName() != null && this
 						.getFirstName().equals(castOther.getFirstName())))
 				&& ((this.getLastName() == castOther.getLastName()) || (this.getLastName() != null && castOther.getLastName() != null && this
@@ -179,7 +193,7 @@ public class EmployeesAllAttrViewId implements java.io.Serializable {
 	public int hashCode() {
 		int result = 17;
 
-		result = 37 * result + (getEmpNo() == null ? 0 : this.getEmpNo().hashCode());
+		result = 37 * result + this.getEmpNo();
 		result = 37 * result + (getFirstName() == null ? 0 : this.getFirstName().hashCode());
 		result = 37 * result + (getLastName() == null ? 0 : this.getLastName().hashCode());
 		result = 37 * result + (getGender() == null ? 0 : this.getGender().hashCode());

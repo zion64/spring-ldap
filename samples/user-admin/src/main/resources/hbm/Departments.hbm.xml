@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 2014. 5. 3 ?????? 9:29:19 by Hibernate Tools 4.0.0 -->
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014. 5. 4 ?????? 11:41:31 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.zeiv.emp.domain.Departments" table="departments" schema="public">
+    <class name="com.zeiv.emp.domain.Departments" table="departments" catalog="employees">
         <id name="deptNo" type="string">
             <column name="dept_no" length="4" />
             <generator class="assigned" />

@@ -248,6 +248,13 @@
 			<artifactId>spring-orm</artifactId>
 			<version>4.0.4.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>unionia.jdbc-driver</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.28</version>
+			<scope>provided</scope>
+			<classifier>bin</classifier>
+		</dependency>
 	</dependencies>
 	<issueManagement>
 		<system>Jira</system>
