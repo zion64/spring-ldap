@@ -3,17 +3,21 @@
                                          "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
  <session-factory name="">
-  <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  <property name="hibernate.dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
   <property name="hibernate.show_sql">false</property>
   <property name="hibernate.format_sql">true</property>
   <property name="hibernate.hbm2ddl.auto">update</property>
-  <property name="hibernate.connection.release_mode">after_transaction</property>
   <property name="hibernate.max_fetch_depth">0</property>
   <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
   <property name="hibernate.connection.url">jdbc:mysql://mysql2.zeiv.dsmynas.com:3306/employees</property>
   <property name="hibernate.connection.username">root</property>
   <property name="hibernate.connection.password">delphi96</property>
-  <property name="hibernate.connection.autocommit">true</property>
+  <property name="hibernate.connection.pool_size">1</property>
+  <property name="hibernate.c3p0.min_size">5</property>
+  <property name="hibernate.c3p0.max_size">20</property>
+  <property name="hibernate.c3p0.timeout">300</property>
+  <property name="hibernate.c3p0.max_statements">50</property>
+  <property name="hibernate.c3p0.idle_test_period">3000</property>
   <mapping resource="hbm/EmployeesAllAttrView.hbm.xml"/>
   <mapping resource="hbm/Departments.hbm.xml"/>
  </session-factory>

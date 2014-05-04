@@ -3,44 +3,43 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2014. 5. 4 ?????? 11:41:31 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.zeiv.emp.domain.EmployeesAllAttrView" table="employees_all_attr_view" catalog="employees">
-        <composite-id name="id" class="com.zeiv.emp.domain.EmployeesAllAttrViewId">
-            <key-property name="empNo" type="int">
-                <column name="emp_no" />
-            </key-property>
-            <key-property name="firstName" type="string">
-                <column name="first_name" length="14" />
-            </key-property>
-            <key-property name="lastName" type="string">
-                <column name="last_name" length="16" />
-            </key-property>
-            <key-property name="gender" type="string">
-                <column name="gender" length="2" />
-            </key-property>
-            <key-property name="hireDate" type="date">
-                <column name="hire_date" length="10" />
-            </key-property>
-            <key-property name="birthDate" type="date">
-                <column name="birth_date" length="10" />
-            </key-property>
-            <key-property name="deptNo" type="string">
-                <column name="dept_no" length="4" />
-            </key-property>
-            <key-property name="deptFromDate" type="date">
-                <column name="dept_from_date" length="10" />
-            </key-property>
-            <key-property name="deptToDate" type="date">
-                <column name="dept_to_date" length="10" />
-            </key-property>
-            <key-property name="title" type="string">
-                <column name="title" length="50" />
-            </key-property>
-            <key-property name="titleFromDate" type="date">
-                <column name="title_from_date" length="10" />
-            </key-property>
-            <key-property name="titleToDate" type="date">
-                <column name="title_to_date" length="10" />
-            </key-property>
-        </composite-id>
-    </class>
+	<class name="com.zeiv.emp.domain.EmployeesAllAttrView" table="employees_all_attr_view" catalog="employees">
+		<id name="empNo" type="int">
+			<column name="emp_no" />
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="string">
+			<column name="first_name" length="14" />
+		</property>
+		<property name="lastName" type="string">
+			<column name="last_name" length="16" />
+		</property>
+		<property name="gender" type="string">
+			<column name="gender" length="2" />
+		</property>
+		<property name="hireDate" type="date">
+			<column name="hire_date" length="10" />
+		</property>
+		<property name="birthDate" type="date">
+			<column name="birth_date" length="10" />
+		</property>
+		<property name="deptNo" type="string">
+			<column name="dept_no" length="4" />
+		</property>
+		<property name="deptFromDate" type="date">
+			<column name="dept_from_date" length="10" />
+		</property>
+		<property name="deptToDate" type="date">
+			<column name="dept_to_date" length="10" />
+		</property>
+		<property name="title" type="string">
+			<column name="title" length="50" />
+		</property>
+		<property name="titleFromDate" type="date">
+			<column name="title_from_date" length="10" />
+		</property>
+		<property name="titleToDate" type="date">
+			<column name="title_to_date" length="10" />
+		</property>
+	</class>
 </hibernate-mapping>

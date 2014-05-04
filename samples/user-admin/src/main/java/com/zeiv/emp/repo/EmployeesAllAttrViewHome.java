@@ -14,6 +14,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.samples.useradmin.util.GenericUtil;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zeiv.emp.domain.EmployeesAllAttrView;
 
@@ -23,6 +25,7 @@ import com.zeiv.emp.domain.EmployeesAllAttrView;
  * @author Hibernate Tools
  */
 @Repository(value="employeesAllAttrViewHome")
+@Transactional(propagation = Propagation.SUPPORTS)
 public class EmployeesAllAttrViewHome {
 
 	private static final Logger		log				= LoggerFactory.getLogger(EmployeesAllAttrViewHome.class);
@@ -88,11 +91,11 @@ public class EmployeesAllAttrViewHome {
 		}
 	}
 
-	public EmployeesAllAttrView findById(com.zeiv.emp.domain.EmployeesAllAttrViewId id) {
+	public EmployeesAllAttrView findById(int id) {
 		log.debug("getting EmployeesAllAttrView instance with id: " + id);
 		try {
 			EmployeesAllAttrView instance = (EmployeesAllAttrView) sessionFactory.getCurrentSession()
-					.get("com.zeiv.emp.util.EmployeesAllAttrView", id);
+					.get("com.zeiv.emp.domain.EmployeesAllAttrView", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			}
@@ -121,6 +124,7 @@ public class EmployeesAllAttrViewHome {
 		}
 	}
 	
+	@Transactional
 	public List<EmployeesAllAttrView> findAll(int start, int limit) {
 		log.debug("finding Employees instance by example");
 		try {

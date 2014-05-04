@@ -17,17 +17,18 @@ import com.zeiv.emp.domain.Departments;
 
 /**
  * Home object for domain model class Departments.
+ * 
  * @see com.zeiv.emp.domain.Departments
  * @author Hibernate Tools
  */
-@Repository(value="departmentsHome")
+@Repository(value = "departmentsHome")
 public class DepartmentsHome {
 
-	private static final Logger		log				= LoggerFactory.getLogger(DepartmentsHome.class);
+	private static final Logger	log	= LoggerFactory.getLogger(DepartmentsHome.class);
 
 	@Autowired
-	private SessionFactory	sessionFactory;
-	
+	private SessionFactory		sessionFactory;
+
 	public void persist(Departments transientInstance) {
 		log.debug("persisting Departments instance");
 		try {
@@ -76,8 +77,7 @@ public class DepartmentsHome {
 	public Departments merge(Departments detachedInstance) {
 		log.debug("merging Departments instance");
 		try {
-			Departments result = (Departments) sessionFactory.getCurrentSession()
-					.merge(detachedInstance);
+			Departments result = (Departments) sessionFactory.getCurrentSession().merge(detachedInstance);
 			log.debug("merge successful");
 			return result;
 		} catch (RuntimeException re) {
@@ -89,8 +89,7 @@ public class DepartmentsHome {
 	public Departments findById(java.lang.String id) {
 		log.debug("getting Departments instance with id: " + id);
 		try {
-			Departments instance = (Departments) sessionFactory.getCurrentSession()
-					.get("com.zeiv.emp.domain.Departments", id);
+			Departments instance = (Departments) sessionFactory.getCurrentSession().get("com.zeiv.emp.domain.Departments", id);
 			if (instance == null) {
 				log.debug("get successful, no instance found");
 			}

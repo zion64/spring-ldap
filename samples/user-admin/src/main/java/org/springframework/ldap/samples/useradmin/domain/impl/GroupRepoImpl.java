@@ -43,7 +43,7 @@ public class GroupRepoImpl implements GroupRepoExtension, BaseLdapNameAware {
 
     @Autowired
     public GroupRepoImpl(LdapTemplate ldapTemplate) {
-        this.ldapTemplate = ldapTemplate;
+        this.ldapTemplate = ldapTemplate; 
     }
 
     @Override
