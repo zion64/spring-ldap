@@ -35,9 +35,15 @@ public final class User implements java.io.Serializable {
 	private Name	id;
 
 	@Attribute(name = "cn")
-	@DnAttribute(value = "cn", index = 3)
+	@DnAttribute(value = "cn", index = 2)
 	private String	fullName;
 
+	@Attribute(name = "description")
+	private String	description;
+	
+	@Attribute(name = "displayName")
+	private String	displayName;
+	
 	@Attribute(name = "employeeNumber")
 	private int		employeeNumber;
 
@@ -53,24 +59,40 @@ public final class User implements java.io.Serializable {
 	@Attribute(name = "mail")
 	private String	email;
 
+	@Attribute(name = "mobile")
+	private String	mobile;
+	
+	@Attribute(name = "postalAddress")
+	private String	postalAddress;
+	
+	@Attribute(name = "postalCode")
+	private String	postalCode;
+	
 	@Attribute(name = "telephoneNumber")
 	private String	phone;
 
-	@DnAttribute(value = "ou", index = 2)
-	@Transient
-	private String	unit;
+//	@DnAttribute(value = "ou", index = 2)
+//	@Transient
+//	private String	unit;
 
 	@DnAttribute(value = "ou", index = 1)
 	@Transient
 	private String	department;
 
-	public String getUnit() {
-		return unit;
-	}
+	@Attribute(name = "uid")
+	private String uid;
 
-	public void setUnit(String unit) {
-		this.unit = unit;
-	}
+	
+	@Attribute(name = "userPassword")
+	private String userPassword;
+	
+//	public String getUnit() {
+//		return unit;
+//	}
+//
+//	public void setUnit(String unit) {
+//		this.unit = unit;
+//	}
 
 	public String getDepartment() {
 		return department;
@@ -78,6 +100,14 @@ public final class User implements java.io.Serializable {
 
 	public void setDepartment(String department) {
 		this.department = department;
+	}
+
+	public String getUid() {
+		return uid;
+	}
+
+	public void setUid(String uid) {
+		this.uid = uid;
 	}
 
 	public Name getId() {
@@ -98,6 +128,30 @@ public final class User implements java.io.Serializable {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getPostalAddress() {
+		return postalAddress;
+	}
+
+	public void setPostalAddress(String postalAddress) {
+		this.postalAddress = postalAddress;
+	}
+
+	public String getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(String postalCode) {
+		this.postalCode = postalCode;
 	}
 
 	public int getEmployeeNumber() {
@@ -124,6 +178,22 @@ public final class User implements java.io.Serializable {
 		this.fullName = fullName;
 	}
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getDisplayName() {
+		return displayName;
+	}
+
+	public void setDisplayName(String displayName) {
+		this.displayName = displayName;
+	}
+
 	public String getLastName() {
 		return lastName;
 	}
@@ -146,6 +216,14 @@ public final class User implements java.io.Serializable {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public String getUserPassword() {
+		return userPassword;
+	}
+
+	public void setUserPassword(String userPassword) {
+		this.userPassword = userPassword;
 	}
 
 	@Override

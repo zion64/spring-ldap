@@ -141,6 +141,20 @@ public class EmployeesAllAttrViewHome {
 		}
 	}
 
+	@Transactional
+	public List<EmployeesAllAttrView> findAll() {
+		log.info("finding EmployeesAllAttrView instance by findAll");
+		try {
+			List<EmployeesAllAttrView> results = GenericUtil.castList(EmployeesAllAttrView.class,
+					sessionFactory.getCurrentSession().createCriteria("com.zeiv.emp.domain.EmployeesAllAttrView").list());
+			log.info("findAll successful, result size: " + results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("EmployeesAllAttrView failed", re);
+			throw re;
+		}
+	}
+	
 	public Number getTotalCountOfEmployeesAllAttrView() {
 		Session session = sessionFactory.getCurrentSession();
 		try {

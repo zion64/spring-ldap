@@ -120,7 +120,7 @@ public class UserService implements BaseLdapNameAware {
         existingUser.setPhone(user.getPhone());
         existingUser.setTitle(user.getTitle());
         existingUser.setDepartment(user.getDepartment());
-        existingUser.setUnit(user.getUnit());
+//        existingUser.setUnit(user.getUnit());
 
         if (directoryType == DirectoryType.AD) {
             return updateUserAd(originalId, existingUser);
