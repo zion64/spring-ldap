@@ -19,18 +19,20 @@ package org.springframework.ldap.samples.useradmin.service;
 import com.google.common.base.Function;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Sets;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.core.support.BaseLdapNameAware;
-import org.springframework.ldap.samples.useradmin.domain.DirectoryType;
+import org.springframework.ldap.samples.useradmin.DirectoryType;
 import org.springframework.ldap.samples.useradmin.domain.Group;
-import org.springframework.ldap.samples.useradmin.domain.GroupRepo;
 import org.springframework.ldap.samples.useradmin.domain.User;
-import org.springframework.ldap.samples.useradmin.domain.UserRepo;
+import org.springframework.ldap.samples.useradmin.repo.GroupRepo;
+import org.springframework.ldap.samples.useradmin.repo.UserRepo;
 import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.ldap.support.LdapUtils;
 
 import javax.naming.Name;
 import javax.naming.ldap.LdapName;
+
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;

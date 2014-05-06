@@ -14,14 +14,14 @@
  * limitations under the License.
  */
 
-package org.springframework.ldap.samples.useradmin.domain;
+package org.springframework.ldap.samples.useradmin.repo;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Mattias Hellborg Arthursson
  */
-public interface GroupRepoExtension {
-    List<String> getAllGroupNames();
-    void create(Group group);
+public interface DepartmentRepo {
+    Map<String, List<String>> getDepartmentMap();
 }

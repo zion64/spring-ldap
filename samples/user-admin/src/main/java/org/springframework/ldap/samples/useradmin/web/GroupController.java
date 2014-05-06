@@ -19,10 +19,11 @@ package org.springframework.ldap.samples.useradmin.web;
 import com.google.common.base.Predicate;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.samples.useradmin.domain.Group;
-import org.springframework.ldap.samples.useradmin.domain.GroupRepo;
 import org.springframework.ldap.samples.useradmin.domain.User;
+import org.springframework.ldap.samples.useradmin.repo.GroupRepo;
 import org.springframework.ldap.samples.useradmin.service.UserService;
 import org.springframework.ldap.support.LdapUtils;
 import org.springframework.stereotype.Controller;

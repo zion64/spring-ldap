@@ -17,6 +17,7 @@ import com.zeiv.emp.repo.EmployeesAllAttrViewHome;
 
 @Controller("employeeController")
 public class EmployeeController {
+	@SuppressWarnings("unused")
 	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 
 	@Resource(name="employeesAllAttrViewHome")

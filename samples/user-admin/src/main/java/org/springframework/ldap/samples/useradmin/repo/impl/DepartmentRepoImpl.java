@@ -14,18 +14,19 @@
  * limitations under the License.
  */
 
-package org.springframework.ldap.samples.useradmin.domain.impl;
+package org.springframework.ldap.samples.useradmin.repo.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ldap.core.LdapTemplate;
 import org.springframework.ldap.core.NameClassPairMapper;
-import org.springframework.ldap.samples.useradmin.domain.DepartmentRepo;
+import org.springframework.ldap.samples.useradmin.repo.DepartmentRepo;
 import org.springframework.ldap.support.LdapNameBuilder;
 import org.springframework.ldap.support.LdapUtils;
 
 import javax.naming.NameClassPair;
 import javax.naming.NamingException;
 import javax.naming.ldap.LdapName;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;

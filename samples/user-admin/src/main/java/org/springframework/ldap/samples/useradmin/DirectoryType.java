@@ -1,4 +1,4 @@
-package org.springframework.ldap.samples.useradmin.domain;
+package org.springframework.ldap.samples.useradmin;
 
 /**
  * @author Mattias Hellborg Arthursson

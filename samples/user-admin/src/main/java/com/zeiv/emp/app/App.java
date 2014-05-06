@@ -10,7 +10,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.ldap.core.ContextSource;
 import org.springframework.ldap.samples.useradmin.domain.User;
 import org.springframework.ldap.samples.useradmin.service.UserService;
-import org.springframework.ldap.support.LdapUtils;
 import org.springframework.ldap.test.LdapTestUtils;
 
 import com.google.common.collect.Lists;

@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 
-package org.springframework.ldap.samples.useradmin.domain;
+package org.springframework.ldap.samples.useradmin.repo;
 
 import org.springframework.ldap.repository.LdapRepository;
 import org.springframework.ldap.repository.Query;
+import org.springframework.ldap.samples.useradmin.domain.Group;
 
 import javax.naming.Name;
+
 import java.util.Collection;
 
 /**
