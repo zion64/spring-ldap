@@ -76,11 +76,11 @@ public class UserService implements BaseLdapNameAware {
     public User createUser(User user) {
         User savedUser = userRepo.save(user);
 
-        Group userGroup = getUserGroup();
+//        Group userGroup = getUserGroup();
 
         // The DN the member attribute must be absolute
-        userGroup.addMember(toAbsoluteDn(savedUser.getId()));
-        groupRepo.save(userGroup);
+//        userGroup.addMember(toAbsoluteDn(savedUser.getId()));
+//        groupRepo.save(userGroup);
 
         return savedUser;
     }

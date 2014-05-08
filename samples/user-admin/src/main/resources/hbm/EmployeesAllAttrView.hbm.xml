@@ -1,45 +1,46 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2014. 5. 4 ?????? 11:41:31 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-	<class name="com.zeiv.emp.domain.EmployeesAllAttrView" table="employees_all_attr_view" catalog="employees">
-		<id name="empNo" type="int">
-			<column name="emp_no" />
-			<generator class="assigned" />
-		</id>
-		<property name="firstName" type="string">
-			<column name="first_name" length="14" />
-		</property>
-		<property name="lastName" type="string">
-			<column name="last_name" length="16" />
-		</property>
-		<property name="gender" type="string">
-			<column name="gender" length="2" />
-		</property>
-		<property name="hireDate" type="date">
-			<column name="hire_date" length="10" />
-		</property>
-		<property name="birthDate" type="date">
-			<column name="birth_date" length="10" />
-		</property>
-		<property name="deptNo" type="string">
-			<column name="dept_no" length="4" />
-		</property>
-		<property name="deptFromDate" type="date">
-			<column name="dept_from_date" length="10" />
-		</property>
-		<property name="deptToDate" type="date">
-			<column name="dept_to_date" length="10" />
-		</property>
-		<property name="title" type="string">
-			<column name="title" length="50" />
-		</property>
-		<property name="titleFromDate" type="date">
-			<column name="title_from_date" length="10" />
-		</property>
-		<property name="titleToDate" type="date">
-			<column name="title_to_date" length="10" />
-		</property>
-	</class>
+ <class catalog="employees" lazy="true"
+  name="com.zeiv.emp.domain.EmployeesAllAttrView" table="employees_all_attr_view">
+  <id name="empNo" type="int">
+   <column name="emp_no"/>
+   <generator class="assigned"/>
+  </id>
+  <property generated="never" lazy="false" name="firstName" type="string">
+   <column length="14" name="first_name"/>
+  </property>
+  <property generated="never" lazy="false" name="lastName" type="string">
+   <column length="16" name="last_name"/>
+  </property>
+  <property generated="never" lazy="false" name="gender" type="string">
+   <column length="2" name="gender"/>
+  </property>
+  <property generated="never" lazy="false" name="hireDate" type="date">
+   <column length="10" name="hire_date"/>
+  </property>
+  <property generated="never" lazy="false" name="birthDate" type="date">
+   <column length="10" name="birth_date"/>
+  </property>
+  <property generated="never" lazy="false" name="deptNo" type="string">
+   <column length="4" name="dept_no"/>
+  </property>
+  <property generated="never" lazy="false" name="deptFromDate" type="date">
+   <column length="10" name="dept_from_date"/>
+  </property>
+  <property generated="never" lazy="false" name="deptToDate" type="date">
+   <column length="10" name="dept_to_date"/>
+  </property>
+  <property generated="never" lazy="false" name="title" type="string">
+   <column length="50" name="title"/>
+  </property>
+  <property generated="never" lazy="false" name="titleFromDate" type="date">
+   <column length="10" name="title_from_date"/>
+  </property>
+  <property generated="never" lazy="false" name="titleToDate" type="date">
+   <column length="10" name="title_to_date"/>
+  </property>
+ </class>
 </hibernate-mapping>

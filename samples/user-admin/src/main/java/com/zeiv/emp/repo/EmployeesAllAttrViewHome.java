@@ -9,6 +9,7 @@ import org.hibernate.LockMode;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -147,6 +148,20 @@ public class EmployeesAllAttrViewHome {
 		try {
 			List<EmployeesAllAttrView> results = GenericUtil.castList(EmployeesAllAttrView.class,
 					sessionFactory.getCurrentSession().createCriteria("com.zeiv.emp.domain.EmployeesAllAttrView").list());
+			log.info("findAll successful, result size: " + results.size());
+			return results;
+		} catch (RuntimeException re) {
+			log.error("EmployeesAllAttrView failed", re);
+			throw re;
+		}
+	}
+	
+	@Transactional
+	public List<EmployeesAllAttrView> findAll(String deptNo) {
+		log.info("finding EmployeesAllAttrView instance by findAll");
+		try {
+			List<EmployeesAllAttrView> results = GenericUtil.castList(EmployeesAllAttrView.class,
+					sessionFactory.getCurrentSession().createCriteria("com.zeiv.emp.domain.EmployeesAllAttrView").add(Restrictions.eq("deptNo",deptNo)).list());
 			log.info("findAll successful, result size: " + results.size());
 			return results;
 		} catch (RuntimeException re) {
